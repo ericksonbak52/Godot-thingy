@@ -1,27 +1,63 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfanpqgl8su8y"]
+[gd_scene load_steps=5 format=4 uid="uid://dfanpqgl8su8y"]
 
 [ext_resource type="PackedScene" uid="uid://ckk6cejchsa0c" path="res://Scenes/Character.tscn" id="1_pdfpp"]
-[ext_resource type="Texture2D" uid="uid://vey8gxypjt86" path="res://Assets/bacon.png" id="2_3dvij"]
+[ext_resource type="Texture2D" uid="uid://dco5nj520qyyr" path="res://Assets/bacon Full tileset.png" id="2_agxq6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vm5j1"]
-size = Vector2(295, 20)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_udh38"]
+texture = ExtResource("2_agxq6")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -2.5, 4, -2.5, 4, 4, -4, 4)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1, -3, 1, -3, 3, 4, -3, 4)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1, -3, 1, -3, 3, 4, -3, 4)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1, 3, 1, 3, 3, -4, -3, -4)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSet" id="TileSet_dgemg"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_udh38")
 
 [node name="Game Root" type="Node2D"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_pdfpp")]
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AADu/wkAAQAAAAAAAADv/wkAAQAAAAAAAADw/wkAAQABAAAAAADx/wkAAQABAAAAAADy/wkAAQABAAAAAADz/wkAAQABAAAAAAD0/wkAAQABAAAAAAD1/wkAAQABAAAAAAD2/wkAAQABAAAAAAD3/wkAAQABAAAAAAD4/wkAAQABAAAAAAD5/wkAAQABAAAAAAD8/wkAAQABAAAAAAD9/wkAAQABAAAAAAD+/wkAAQABAAAAAAD//wkAAQABAAAAAAAAAAkAAQABAAAAAAABAAkAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAAFAAkAAQABAAAAAAAGAAkAAQAAAAAAAAACAAkAAQAAAAAAAAAHAAkAAQAAAAAAAAAIAAkAAQAAAAAAAAAJAAkAAQAAAAAAAAAKAAkAAQAAAAAAAAALAAkAAQAAAAAAAAAMAAkAAQAAAAAAAAANAAkAAQAAAAAAAAAQAAkAAQAAAAAAAAARAAkAAQAAAAAAAAAPAAkAAQAAAAAAAAAOAAkAAQAAAAAAAADw/wgAAQAAAAAAAADx/wcAAQAAAAAAAADz/wUAAQAAAAAAAAD0/wUAAQAAAAAAAADy/wYAAQAAAAAAAAD1/wUAAQAAAAAAAAD2/wUAAQAAAAAAAAD3/wUAAQAAAAAAAAD4/wUAAQAAAAAAAAD5/wUAAQAAAAAAAAD6/wUAAQAAAAAAAAD7/wUAAQAAAAAAAAD8/wUAAQAAAAAAAAD9/wUAAQAAAAAAAAD+/wYAAQAAAAAAAAD//wcAAQAAAAAAAAAAAAgAAQAAAAAAAAD//wgAAQABAAAAAAD+/wgAAQABAAAAAAD9/wgAAQABAAAAAAD8/wgAAQABAAAAAAD7/wgAAQABAAAAAAD6/wgAAQABAAAAAAD3/wgAAQABAAAAAAD2/wgAAQABAAAAAAD1/wgAAQABAAAAAAD0/wgAAQABAAAAAADz/wgAAQABAAAAAADy/wgAAQABAAAAAADx/wgAAQABAAAAAADz/wYAAQABAAAAAAD0/wYAAQABAAAAAAD0/wcAAQABAAAAAAD1/wcAAQABAAAAAAD1/wYAAQABAAAAAAD2/wYAAQABAAAAAAD3/wYAAQABAAAAAAD4/wYAAQABAAAAAAD5/wYAAQABAAAAAAD6/wYAAQABAAAAAAD7/wYAAQABAAAAAAD8/wYAAQABAAAAAAD9/wYAAQABAAAAAAD+/wcAAQABAAAAAAD9/wcAAQABAAAAAAD8/wcAAQABAAAAAAD7/wcAAQABAAAAAAD6/wcAAQABAAAAAAD5/wcAAQABAAAAAAD4/wcAAQABAAAAAADy/wcAAQABAAAAAADz/wcAAQABAAAAAAAEAAgAAQAFAAAAAAAFAAcAAQAEAAAAAAAFAAgAAQAAAAAAAAAGAAgAAQAFAAAAAAAIAAgAAQABAAMAAAAJAAgAAQAAAAEAAAAKAAgAAQAAAAEAAAALAAgAAQAAAAEAAAAMAAgAAQAAAAEAAAANAAgAAQAAAAEAAAAOAAgAAQABAAEAAAAPAAgAAQAAAAEAAAAQAAgAAQACAAMAAAD2/wcAAQABAAAAAAD3/wcAAQABAAAAAAD4/wgAAQABAAAAAAD5/wgAAQABAAAAAAD6/wkAAQABAAAAAAD7/wkAAQABAAAAAAAJAAcAAQABAAMAAAAKAAcAAQABAAEAAAALAAcAAQABAAEAAAAMAAcAAQABAAEAAAANAAcAAQACAAMAAAAPAAcAAQADAAMAAAAIAAEAAQACAAEAAAAJAAEAAQACAAEAAAAKAAEAAQACAAEAAAALAAEAAQACAAEAAAAMAAEAAQACAAEAAAANAAEAAQACAAEAAAAOAAEAAQACAAEAAAAPAAEAAQACAAEAAAAQAAEAAQACAAEAAAAKAAIAAQADAAEAAAALAAIAAQADAAEAAAAMAAIAAQADAAEAAAANAAIAAQADAAEAAAAOAAIAAQADAAEAAAA=")
+tile_set = SubResource("TileSet_dgemg")
+
+[node name="Player" parent="." instance=ExtResource("1_pdfpp")]
 position = Vector2(-1, -15)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-3, 4)
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(1, 15)
 zoom = Vector2(4, 4)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-6.5, 59)
-shape = SubResource("RectangleShape2D_vm5j1")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-6, 60)
-scale = Vector2(29.4297, 1)
-texture = ExtResource("2_3dvij")
+position_smoothing_enabled = true
