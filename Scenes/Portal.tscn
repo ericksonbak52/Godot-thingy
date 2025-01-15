@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://codnix2ioysjx"]
+[gd_scene load_steps=4 format=3 uid="uid://codnix2ioysjx"]
 
 [ext_resource type="Texture2D" uid="uid://beedpexnpywdc" path="res://Assets/bacon portal.png" id="1_iqdft"]
+[ext_resource type="Script" path="res://Scenes/bacon_portal.gd" id="2_1acn4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nyidh"]
 size = Vector2(18.7973, 22.6892)
@@ -9,6 +10,7 @@ size = Vector2(18.7973, 22.6892)
 position = Vector2(-1.13687e-13, -5.68434e-14)
 scale = Vector2(2.05556, 2.05556)
 texture = ExtResource("1_iqdft")
+script = ExtResource("2_1acn4")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(5.53071e-14, 2.76536e-14)
