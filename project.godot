@@ -16,6 +16,12 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(0.927074, 0.193304, 0.648785, 1)
 config/icon="res://Assets/icon.svg"
 
+[display]
+
+window/size/mode=2
+window/stretch/mode="viewport"
+window/vsync/vsync_mode=0
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
@@ -47,3 +53,5 @@ left={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+anti_aliasing/quality/screen_space_aa=1
+anti_aliasing/quality/use_taa=true
