@@ -27,7 +27,7 @@ _data = {
 "player_do": ExtResource("4_urf47")
 }
 
-[node name="Game Root" type="Node2D"]
+[node name="Main" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1.52588e-05, 0)
