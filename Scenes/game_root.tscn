@@ -53,7 +53,7 @@ tile_map_data = PackedByteArray("AADx/wkAAQAAAAAAAADy/wkAAQAAAAAAAADz/wkAAQAAAAA
 tile_set = ExtResource("2_q1xd0")
 
 [node name="Player" parent="." instance=ExtResource("1_pdfpp")]
-position = Vector2(-101.137, -0.481033)
+position = Vector2(-115.705, 54.8171)
 scale = Vector2(0.7, 0.7)
 collision_mask = 2
 
