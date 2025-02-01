@@ -6,5 +6,4 @@ func _on_body_entered(body: Node2D) -> void:
 	death()
 
 func death():
-	print(player == null)
 	print("dead")

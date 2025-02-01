@@ -20,4 +20,3 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	pos = position + Vector2(290, 0)
 	target = target + Vector2(290, 0)
-	print("target good")
