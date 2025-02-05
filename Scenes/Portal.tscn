@@ -1,7 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://codnix2ioysjx"]
 
 [ext_resource type="Texture2D" uid="uid://beedpexnpywdc" path="res://Assets/bacon portal.png" id="1_iqdft"]
-[ext_resource type="Script" path="res://Scenes/bacon_portal.gd" id="2_1acn4"]
+[ext_resource type="Script" path="res://Scripts/bacon_portal.gd" id="2_1acn4"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nyidh"]
 size = Vector2(18.7973, 22.6892)

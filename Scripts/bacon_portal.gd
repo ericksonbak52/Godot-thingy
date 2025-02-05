@@ -11,7 +11,8 @@ var speed = 6
 func _ready() -> void:
 	current = cam.position
 	target = current
-	portalAnimator.play("player_do")
+	print(portalAnimator)
+	portalAnimator.play("portalFloat")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bntm12dgatxc2"]
 
-[ext_resource type="Script" path="res://Scenes/kill_areas.gd" id="1_rnphv"]
+[ext_resource type="Script" path="res://Scripts/kill_areas.gd" id="1_rnphv"]
+
 
 [node name="killAreas" type="Area2D"]
 script = ExtResource("1_rnphv")
