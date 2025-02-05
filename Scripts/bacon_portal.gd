@@ -4,7 +4,7 @@ extends Sprite2D
 @onready var joes = $"../../Cam/spawnPoint"
 @onready var target
 @onready var current
-@onready var portalAnimator = $"../../portalAnimator"
+@onready var portalAnimator = get_parent()
 @onready var pos = position
 var speed = 6
 # Called when the node enters the scene tree for the first time.
