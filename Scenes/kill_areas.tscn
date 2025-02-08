@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://Scripts/kill_areas.gd" id="1_rnphv"]
 
-
 [node name="killAreas" type="Area2D"]
 script = ExtResource("1_rnphv")
 

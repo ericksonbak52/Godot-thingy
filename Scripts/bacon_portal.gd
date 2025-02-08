@@ -12,7 +12,8 @@ func _ready() -> void:
 	current = cam.position
 	target = current
 	print(portalAnimator)
-	portalAnimator.play("portalFloat")
+	#$"../../joe".play("portalFloat")
+	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

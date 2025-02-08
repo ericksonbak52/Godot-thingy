@@ -4,13 +4,29 @@
 [ext_resource type="Texture2D" uid="uid://4v73epxlcec7" path="res://Assets/sky for bacon.png" id="1_q2j4t"]
 [ext_resource type="TileSet" uid="uid://cwyjq37j77stf" path="res://Scenes/tileset.tres" id="2_q1xd0"]
 [ext_resource type="PackedScene" uid="uid://codnix2ioysjx" path="res://Scenes/Portal.tscn" id="4_abxal"]
-[ext_resource type="Animation" uid="uid://cxg6mp7y6bvio" path="res://animations/portalFloat.res" id="4_wa4fp"]
 [ext_resource type="PackedScene" uid="uid://bntm12dgatxc2" path="res://Scenes/kill_areas.tscn" id="6_auyg4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uphba"]
 distance = -168.615
 
-[sub_resource type="Animation" id="Animation_u801f"]
+[sub_resource type="Animation" id="Animation_fmygy"]
+resource_name = "portal_float"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/baconPortal:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(132, 55), Vector2(132, 53), Vector2(132, 55)]
+}
+
+[sub_resource type="Animation" id="Animation_fbaje"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -24,23 +40,11 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(132, 55)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/baconPortal:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_mh3ch"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_adgd6"]
 _data = {
-"RESET": SubResource("Animation_u801f"),
-"portalFloat": ExtResource("4_wa4fp")
+"RESET": SubResource("Animation_fbaje"),
+"portal_float": SubResource("Animation_fmygy")
 }
 
 [node name="Main" type="Node2D"]
@@ -86,11 +90,9 @@ collision_visibility_mode = 1
 shape = SubResource("WorldBoundaryShape2D_uphba")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-process_mode = 3
 libraries = {
-"": SubResource("AnimationLibrary_mh3ch")
+"": SubResource("AnimationLibrary_adgd6")
 }
-autoplay = "portalFloat"
 
 [node name="baconPortal" parent="AnimationPlayer" instance=ExtResource("4_abxal")]
 position = Vector2(132, 55)
