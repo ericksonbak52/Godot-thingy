@@ -1,7 +1,8 @@
 extends Sprite2D
 
 @onready var cam = $"../../Cam"
-@onready var joes = $"../../Cam/spawnPoint"
+@onready var spawnPoint = $"../../Cam/spawnPoint"
+@onready var player = $"../../Player"
 @onready var target
 @onready var current
 @onready var portalAnimator = get_parent()
@@ -22,6 +23,8 @@ func _process(delta: float) -> void:
 	position = pos
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print(joes)
+	print(spawnPoint)
 	pos = position + Vector2(290, 0) 
 	target = target + Vector2(290, 0)
+	player.position = spawnPoint.position
+	

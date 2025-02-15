@@ -8,4 +8,5 @@ func _on_body_entered(body: Node2D) -> void:
 
 func death():
 	print("dead")
+	player.velocity = Vector2.ZERO
 	player.global_position = spawn.global_position
