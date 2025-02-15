@@ -3,18 +3,18 @@ extends Sprite2D
 @onready var cam = $"../../Cam"
 @onready var spawnPoint = $"../../Cam/spawnPoint"
 @onready var player = $"../../Player"
+@onready var portalAnimator = get_parent()
 @onready var target
 @onready var current
-@onready var portalAnimator = get_parent()
 @onready var pos = position
+
 var speed = 6
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current = cam.position
 	target = current
-	print(portalAnimator)
+	portalAnimator.play("portalFloat.res");
 	#$"../../joe".play("portalFloat")
-	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
