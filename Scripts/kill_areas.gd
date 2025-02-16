@@ -3,7 +3,7 @@ extends Area2D
 @onready var player = $"../Player"
 @onready var spawn = $"../Cam/spawnPoint"
 	
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	death()
 
 func death():

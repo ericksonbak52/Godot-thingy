@@ -13,7 +13,7 @@ var speed = 6
 func _ready() -> void:
 	current = cam.position
 	target = current
-	portalAnimator.play("portalFloat.res");
+	portalAnimator.play("portal_float");
 	#$"../../joe".play("portalFloat")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 	cam.position = current.lerp(target, speed * delta)
 	position = pos
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	print(spawnPoint)
 	pos = position + Vector2(290, 0) 
 	target = target + Vector2(290, 0)

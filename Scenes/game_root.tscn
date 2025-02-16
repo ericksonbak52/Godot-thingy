@@ -24,7 +24,7 @@ tracks/0/keys = {
 "values": [Vector2(132, 55)]
 }
 
-[sub_resource type="Animation" id="Animation_fmygy"]
+[sub_resource type="Animation" id="Animation_wcecj"]
 resource_name = "portal_float"
 length = 3.0
 loop_mode = 1
@@ -44,7 +44,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_adgd6"]
 _data = {
 "RESET": SubResource("Animation_fbaje"),
-"portal_float": SubResource("Animation_fmygy")
+"portal_float": SubResource("Animation_wcecj")
 }
 
 [node name="Main" type="Node2D"]
@@ -93,6 +93,7 @@ shape = SubResource("WorldBoundaryShape2D_uphba")
 libraries = {
 "": SubResource("AnimationLibrary_adgd6")
 }
+autoplay = "portal_float"
 
 [node name="baconPortal" parent="AnimationPlayer" instance=ExtResource("4_abxal")]
 position = Vector2(132, 55)
