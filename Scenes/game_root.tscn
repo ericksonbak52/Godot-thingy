@@ -1,51 +1,13 @@
-[gd_scene load_steps=10 format=4 uid="uid://dfanpqgl8su8y"]
+[gd_scene load_steps=7 format=4 uid="uid://dfanpqgl8su8y"]
 
 [ext_resource type="PackedScene" uid="uid://ckk6cejchsa0c" path="res://Scenes/Character.tscn" id="1_pdfpp"]
 [ext_resource type="Texture2D" uid="uid://4v73epxlcec7" path="res://Assets/sky for bacon.png" id="1_q2j4t"]
 [ext_resource type="TileSet" uid="uid://cwyjq37j77stf" path="res://Scenes/tileset.tres" id="2_q1xd0"]
-[ext_resource type="PackedScene" uid="uid://codnix2ioysjx" path="res://Scenes/Portal.tscn" id="4_abxal"]
+[ext_resource type="PackedScene" uid="uid://frfxxfapt5hb" path="res://Scenes/portal.tscn" id="5_ygaoj"]
 [ext_resource type="PackedScene" uid="uid://bntm12dgatxc2" path="res://Scenes/kill_areas.tscn" id="6_auyg4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uphba"]
 distance = -168.615
-
-[sub_resource type="Animation" id="Animation_fbaje"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/baconPortal:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(132, 55)]
-}
-
-[sub_resource type="Animation" id="Animation_wcecj"]
-resource_name = "portal_float"
-length = 3.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/baconPortal:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(132, 55), Vector2(132, 53), Vector2(132, 55)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_adgd6"]
-_data = {
-"RESET": SubResource("Animation_fbaje"),
-"portal_float": SubResource("Animation_wcecj")
-}
 
 [node name="Main" type="Node2D"]
 
@@ -58,7 +20,7 @@ limit_bottom = 120
 position_smoothing_speed = 10.0
 
 [node name="SkyForBacon" type="Sprite2D" parent="Cam"]
-position = Vector2(2.17983e-05, -0.17857)
+position = Vector2(2.28882e-05, -0.17857)
 scale = Vector2(0.201203, 0.201203)
 texture = ExtResource("1_q2j4t")
 
@@ -89,12 +51,5 @@ collision_visibility_mode = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killAreas"]
 shape = SubResource("WorldBoundaryShape2D_uphba")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_adgd6")
-}
-autoplay = "portal_float"
-
-[node name="baconPortal" parent="AnimationPlayer" instance=ExtResource("4_abxal")]
-position = Vector2(132, 55)
-scale = Vector2(1.13889, 1.13889)
+[node name="portal" parent="." instance=ExtResource("5_ygaoj")]
+position = Vector2(-44.2688, 33.3167)

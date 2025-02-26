@@ -1,23 +1,89 @@
-[gd_scene load_steps=4 format=3 uid="uid://codnix2ioysjx"]
+[gd_scene load_steps=7 format=3 uid="uid://frfxxfapt5hb"]
 
-[ext_resource type="Texture2D" uid="uid://beedpexnpywdc" path="res://Assets/bacon portal.png" id="1_iqdft"]
-[ext_resource type="Script" path="res://Scripts/bacon_portal.gd" id="2_1acn4"]
+[ext_resource type="Texture2D" uid="uid://beedpexnpywdc" path="res://Assets/bacon portal.png" id="1_3dkoj"]
+[ext_resource type="Script" path="res://Scripts/bacon_portal.gd" id="1_aj343"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nyidh"]
-size = Vector2(18.7973, 22.6892)
+[sub_resource type="Animation" id="Animation_2vp4v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animator/portal/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("animator/portal/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
-[node name="BaconPortal" type="Sprite2D"]
-position = Vector2(-1.13687e-13, -5.68434e-14)
-scale = Vector2(2.05556, 2.05556)
-texture = ExtResource("1_iqdft")
-script = ExtResource("2_1acn4")
+[sub_resource type="Animation" id="Animation_tg5y2"]
+resource_name = "floaty"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animator/portal/Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("animator/portal/CollisionShape2D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3)]
+}
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(5.53071e-14, 2.76536e-14)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8qi0m"]
+_data = {
+"RESET": SubResource("Animation_2vp4v"),
+"floaty": SubResource("Animation_tg5y2")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1oen"]
+size = Vector2(18, 22)
+
+[node name="portal" type="Node2D"]
+
+[node name="animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8qi0m")
+}
+autoplay = "floaty"
+
+[node name="portal" type="Area2D" parent="animator"]
 collision_mask = 2
+script = ExtResource("1_aj343")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.155405, -0.155405)
-shape = SubResource("RectangleShape2D_nyidh")
+[node name="Sprite2D" type="Sprite2D" parent="animator/portal"]
+texture = ExtResource("1_3dkoj")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="animator/portal"]
+shape = SubResource("RectangleShape2D_a1oen")
+
+[connection signal="body_shape_entered" from="animator/portal" to="animator/portal" method="_on_body_shape_entered"]
