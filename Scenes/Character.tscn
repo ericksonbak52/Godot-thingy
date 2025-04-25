@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ckk6cejchsa0c"]
 
-[ext_resource type="Script" path="res://Scripts/character.gd" id="1_v44bv"]
+[ext_resource type="Script" uid="uid://3jf0b3akkrhf" path="res://Scripts/character.gd" id="1_v44bv"]
 [ext_resource type="Texture2D" uid="uid://xmlv50ln077a" path="res://Assets/bacon idle.png" id="2_0lw02"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrt7q"]
